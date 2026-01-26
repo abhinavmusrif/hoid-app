@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOID // Intelligent Apps</title>
+    <title>HOID™ // Intelligent Apps</title>
     <style>
         body {
             margin: 0;
@@ -25,6 +25,16 @@
             background: linear-gradient(90deg, #ffffff, #888888);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        /* This styles the Trademark TM symbol */
+        .tm {
+            font-size: 1.5rem;
+            vertical-align: super;
+            color: #666;
+            letter-spacing: normal;
+            -webkit-text-fill-color: #666; /* Keeps it grey, not gradient */
         }
         p {
             font-size: 1.2rem;
@@ -51,7 +61,7 @@
 <body>
     <div class="glow"></div>
     <div class="container">
-        <h1>hoid.</h1>
+        <h1>hoid<span class="tm">™</span></h1>
         <p>Intelligent Apps Coming Soon</p>
     </div>
 </body>
