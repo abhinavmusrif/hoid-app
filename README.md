@@ -1,10 +1,10 @@
-# hoid™
+# Hoid™
 
 [![System Status](https://img.shields.io/website?url=https%3A%2F%2Fhoid.app&up_message=Operational&up_color=000000&style=flat-square&logo=apple)](https://hoid.app)
 
 > **Intelligent Apps. Simplified.**
 
-**hoid™** is a suite of next-generation applications designed to bridge the gap between human intent and artificial intelligence. We are building the interface for the agentic future.
+**Hoid™** is a suite of next-generation applications designed to bridge the gap between human intent and artificial intelligence. We are building the interface for the agentic future.
 
 ---
 
@@ -25,4 +25,4 @@
 
 ### ⚖️ Legal & Copyright
 **© 2026 Abhinav Musrif.** All Rights Reserved.
-*The "hoid" name and logo are trademarks of Abhinav Musrif.*
+*The "Hoid" name and logo are trademarks of Abhinav Musrif.*
