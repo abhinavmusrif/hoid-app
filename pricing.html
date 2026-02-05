@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hoid – Pricing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --card: #0b1020;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.12);
+      --accent-strong: #a855f7;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.28);
+      --radius-xl: 20px;
+      --shadow-soft: 0 30px 80px rgba(15, 23, 42, 0.85);
+      --shadow-glow: 0 0 60px rgba(79, 70, 229, 0.45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 55%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
+
+    header {
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .logo-mark {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #a855f7, #4f46e5 45%, #22c55e 80%);
+      box-shadow: 0 0 22px rgba(168, 85, 247, 0.8);
+    }
+
+    h1 {
+      font-size: clamp(32px, 4vw, 42px);
+      font-weight: 650;
+      letter-spacing: -0.04em;
+    }
+
+    h1 .brand {
+      background: linear-gradient(120deg, #e5e7eb, #c4b5fd, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 960px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .plan {
+      background:
+        radial-gradient(circle at top left, rgba(79,70,229,0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(22,163,74,0.18), transparent 55%),
+        var(--card);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .plan.recommended {
+      border-color: rgba(168, 85, 247, 0.8);
+      box-shadow: var(--shadow-soft), var(--shadow-glow);
+      transform: translateY(-4px);
+    }
+
+    .plan-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #d1d5db;
+    }
+
+    .plan-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 650;
+    }
+
+    .price-unit {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .primary-btn {
+      margin-top: 6px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: linear-gradient(130deg, #4f46e5, #a855f7);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.85);
+    }
+
+    .primary-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .feature-group {
+      margin-top: 10px;
+    }
+
+    .feature-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    ul.features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      color: #d1d5db;
+    }
+
+    ul.features li {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    ul.features li::before {
+      content: "";
+      margin-top: 5px;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e, #16a34a);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+      flex-shrink: 0;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(75, 85, 99, 0.6);
+      font-size: 11px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header>
+      <div class="logo-lockup">
+        <div class="logo-mark"></div>
+        <span>Hoid — AI UI Engineer</span>
+      </div>
+
+      <h1>
+        The first <span class="brand">AI UI Engineer</span><br>
+        that remembers your design system<br>
+        and learns from its mistakes.
+      </h1>
+
+      <p class="subtitle">
+        Hoid is a visual-first AI builder that designs, iterates, and improves real interfaces
+        over time. Not prompts. Not templates. A system that learns how *you* build.
+      </p>
+    </header>
+
+    <section class="grid">
+
+      <!-- Starter -->
+      <article class="plan">
+        <div>
+          <div class="plan-name">Starter</div>
+          <div class="plan-tagline">For serious individual builders.</div>
+        </div>
+
+        <div>
+          <span class="price">$49</span>
+          <span class="price-unit">/ month</span>
+        </div>
+
+        <button class="primary-btn">Start Starter</button>
+
+        <div class="feature-group">
+          <div class="feature-label">Core intelligence</div>
+          <ul class="features">
+            <li>Visual-first UI generation</li>
+            <li>Large-context reasoning</li>
+            <li>Persistent session memory</li>
+            <li>Design system inference</li>
+          </ul>
+        </div>
+
+        <div class="feature-group">
+          <div class="feature-label">Workflow</div>
+          <ul class="features">
+            <li>Layout graph synthesis</li>
+            <li>Component tree generation</li>
+            <li>Design → logic co-creation</li>
+            <li>Versioned projects</li>
+          </ul>
+        </div>
+
+        <div class="footer-note">
+          Best for solo builders shipping real interfaces.
+        </div>
+      </article>
+
+      <!-- Studio -->
+      <article class="plan recommended">
+        <div>
+          <div class="plan-name">Studio</div>
+          <div class="plan-tagline">For product teams and studios.</div>
+        </div>
+
+        <div>
+          <span class="price">$149</span>
+          <span class="price-unit">/ creator / month</span>
+        </div>
+
+        <button class="primary-btn">Run Studio Workspace</button>
+
+        <div class="feature-group">
+          <div class="feature-label">Memory & reasoning</div>
+          <ul class="features">
+            <li>Episodic + vector memory systems</li>
+            <li>Retrieval-augmented generation</li>
+            <li>Planner–executor loops</li>
+            <li>Critic-driven self-refinement</li>
+          </ul>
+        </div>
+
+        <div class="feature-group">
+          <div class="feature-label">Interface & motion</div>
+          <ul class="features">
+            <li>Constraint-based UI logic</li>
+            <li>High-fidelity rendering</li>
+            <li>Animation & interaction modeling</li>
+            <li>Asset-aware generation</li>
+          </ul>
+        </div>
+
+        <div class="footer-note">
+          Best for teams building production-grade products.
+        </div>
+      </article>
+
+      <!-- Enterprise -->
+      <article class="plan">
+        <div>
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-tagline">Governed, isolated, and SLA-backed.</div>
+        </div>
+
+        <div class="price">Custom</div>
+
+        <button class="primary-btn">Contact Sales</button>
+
+        <div class="feature-group">
+          <div class="feature-label">Scale & control</div>
+          <ul class="features">
+            <li>Large file & dataset ingestion</li>
+            <li>Dedicated compute fabrics</li>
+            <li>Cost-aware orchestration</li>
+            <li>Audit logs & compliance</li>
+            <li>Custom isolation models</li>
+          </ul>
+        </div>
+
+        <div class="footer-note">
+          Best for enterprises, platforms, and global teams.
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
