@@ -1,5 +1,125 @@
-<h2>Contact Us</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Hoid Solutions</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #050505;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            overflow: hidden;
+        }
+        .container { 
+            text-align: center; 
+            z-index: 2; 
+            max-width: 500px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            letter-spacing: -1px;
+            margin: 0 0 30px 0;
+            background: linear-gradient(90deg, #ffffff, #888888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        .contact-item {
+            font-size: 1.1rem;
+            color: #bbb;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        .label {
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 5px;
+        }
+        a.email-link {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px dotted #666;
+            transition: border-color 0.3s;
+        }
+        a.email-link:hover { border-color: #fff; }
+        
+        /* Glow Effect */
+        .glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(65,105,225,0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: 1;
+            animation: breathe 4s infinite ease-in-out;
+        }
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
 
-<p><strong>Owner:</strong> Musrif Abhinav</p>
-<p><strong>Email:</strong> ceo@hoid.app</p>
-<p><strong>Location:</strong> Mahbubnagar, Telangana, India</p>
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 2;
+        }
+        footer a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        footer a:hover { color: #fff; }
+        .copyright { font-size: 0.75rem; color: #444; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    <div class="container">
+        <h1>Contact Us</h1>
+        
+        <div class="contact-item">
+            <span class="label">Owner</span>
+            Musrif Abhinav
+        </div>
+
+        <div class="contact-item">
+            <span class="label">Email</span>
+            <a href="mailto:ceo@hoid.app" class="email-link">ceo@hoid.app</a>
+        </div>
+
+        <div class="contact-item">
+            <span class="label">Location</span>
+            Mahbubnagar, Telangana, India
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" style="color: #fff;">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="refund.html">Refunds</a>
+        </div>
+        <div class="copyright">&copy; 2026 Hoid Solutions. All rights reserved.</div>
+    </footer>
+</body>
+</html>
