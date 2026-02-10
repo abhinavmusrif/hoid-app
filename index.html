@@ -38,7 +38,6 @@
             color: #666;
             -webkit-text-fill-color: #666;
         }
-        /* Added a tagline class for the main sub-header */
         .tagline {
             font-size: 1.2rem;
             color: #888;
@@ -47,7 +46,6 @@
             text-transform: uppercase;
             font-weight: 600;
         }
-        /* Added a description class for the "Meat" of the page */
         .description {
             font-size: 1rem;
             color: #aaa;
@@ -69,24 +67,33 @@
             50% { transform: scale(1.2); opacity: 0.8; }
         }
 
+        /* Footer styling for Legal Links */
         footer {
             position: absolute;
-            bottom: 30px;
-            font-size: 0.9rem;
-            color: #555;
-            z-index: 2;
+            bottom: 20px;
+            width: 100%;
             text-align: center;
+            z-index: 2;
+        }
+        .footer-links {
+            margin-bottom: 10px;
         }
         footer a {
-            color: #777;
+            color: #666;
             text-decoration: none;
+            font-size: 0.85rem;
             margin: 0 10px;
             transition: color 0.3s;
         }
         footer a:hover {
             color: #fff;
         }
-        /* Button style for direct contact */
+        .copyright {
+            font-size: 0.75rem;
+            color: #444;
+        }
+
+        /* Call to Action Button */
         .contact-btn {
             margin-top: 30px;
             display: inline-block;
@@ -113,7 +120,7 @@
         <p class="tagline">Intelligent Automation & AI Solutions</p>
         
         <p class="description">
-            Hoid Solutions is building the next generation of humanoid robotics software and AI-driven consumer applications. 
+            Hoid Solutions is building next-gen humanoid robotics software and AI-driven consumer applications. 
             <br><br>
             We are currently developing <strong>milnazaroor</strong>, a proprietary matching platform, and advanced automation tools for the modern web.
         </p>
@@ -122,7 +129,16 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Hoid Solutions. All rights reserved.</p>
-        </footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="refund.html">Refund Policy</a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Hoid Solutions. All rights reserved.
+        </div>
+    </footer>
 </body>
 </html>
