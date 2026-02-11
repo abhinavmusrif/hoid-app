@@ -93,10 +93,17 @@
             color: #444;
         }
 
-        /* Call to Action Button */
-        .contact-btn {
+        /* Button Group Styling */
+        .btn-group {
             margin-top: 30px;
-            display: inline-block;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Primary Button */
+        .contact-btn {
             padding: 10px 25px;
             border: 1px solid #333;
             border-radius: 50px;
@@ -109,6 +116,22 @@
         .contact-btn:hover {
             background: rgba(255,255,255,0.1);
             border-color: #666;
+        }
+
+        /* Secondary Button (Research Lab) */
+        .research-btn {
+            padding: 10px 25px;
+            border: 1px solid transparent; /* No border initially */
+            border-radius: 50px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background: rgba(0,0,0,0.3);
+        }
+        .research-btn:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.05);
         }
     </style>
 </head>
@@ -125,7 +148,10 @@
             We are currently developing <strong>milnazaroor</strong>, a proprietary matching platform, and advanced automation tools for the modern web.
         </p>
 
-        <a href="mailto:contact@hoid.app" class="contact-btn">Get in Touch</a>
+        <div class="btn-group">
+            <a href="mailto:ceo@hoid.app" class="contact-btn">Get in Touch</a>
+            <a href="https://thehumanoid.tech" target="_blank" class="research-btn">Visit Research Lab ↗</a>
+        </div>
     </div>
 
     <footer>
