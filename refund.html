@@ -5,14 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refund, Cancellation & Delivery Policy | Hoid Solutions</title>
     <style>
-        body { margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #050505; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; overflow: hidden; }
-        .container { text-align: center; z-index: 2; max-width: 700px; padding: 20px; }
+        body { 
+            margin: 0; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            background-color: #050505; 
+            color: #ffffff; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            overflow-x: hidden;
+        }
+        
+        /* FIX: Main content grows to push footer down */
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px; /* Add top/bottom padding */
+            z-index: 2;
+            position: relative;
+        }
+
+        .container { 
+            text-align: center; 
+            max-width: 700px; 
+            width: 100%;
+        }
+
         h1 { font-size: 3rem; letter-spacing: -1px; margin: 0 0 30px 0; background: linear-gradient(90deg, #ffffff, #888888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
         p { font-size: 1rem; color: #bbb; line-height: 1.6; font-weight: 300; text-align: left; margin-bottom: 15px; }
         h2 { font-size: 1.5rem; color: #fff; margin: 30px 0 15px 0; text-align: left; border-bottom: 1px dashed #333; padding-bottom: 10px; }
-        .glow { position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(65,105,225,0.15) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; z-index: 1; animation: breathe 4s infinite ease-in-out; }
-        @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.2); opacity: 0.8; } }
-        footer { position: absolute; bottom: 20px; width: 100%; text-align: center; z-index: 2; }
+        
+        .glow { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(65,105,225,0.15) 0%, rgba(0,0,0,0) 70%); border-radius: 50%; z-index: 1; animation: breathe 4s infinite ease-in-out; pointer-events: none; }
+        @keyframes breathe { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; } 50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; } }
+
+        /* FIX: Footer is now relative, not absolute */
+        footer { 
+            width: 100%; 
+            text-align: center; 
+            z-index: 2; 
+            padding: 20px 0;
+            background: #050505; /* Solid background to prevent see-through */
+            border-top: 1px solid #111;
+        }
         footer a { color: #666; text-decoration: none; font-size: 0.85rem; margin: 0 10px; transition: color 0.3s; }
         footer a:hover { color: #fff; }
         .copyright { font-size: 0.75rem; color: #444; margin-top: 10px; }
@@ -20,32 +57,35 @@
 </head>
 <body>
     <div class="glow"></div>
-    <div class="container">
-        <h1>Policies</h1>
-        
-        <h2>Cancellation Policy</h2>
-        <p>
-            <strong>How to Cancel:</strong> You may cancel your subscription at any time by contacting support at <a href="mailto:ceo@hoid.app" style="color: #fff;">ceo@hoid.app</a>.
-        </p>
-        <p>
-            <strong>Service Detail on Cancellation:</strong> Upon cancellation, your service access (API keys/Dashboard) will remain active until the end of your current paid billing period. After this period ends, no further charges will be deducted, and service access will be revoked.
-        </p>
+    
+    <div class="content-wrapper">
+        <div class="container">
+            <h1>Policies</h1>
+            
+            <h2>Cancellation Policy</h2>
+            <p>
+                <strong>How to Cancel:</strong> You may cancel your subscription at any time by contacting support at <a href="mailto:ceo@hoid.app" style="color: #fff;">ceo@hoid.app</a>.
+            </p>
+            <p>
+                <strong>Service Detail on Cancellation:</strong> Upon cancellation, your service access (API keys/Dashboard) will remain active until the end of your current paid billing period. After this period ends, no further charges will be deducted, and service access will be revoked.
+            </p>
 
-        <h2>Refund Policy</h2>
-        <p>
-            Due to the digital nature of our products, <strong>all sales are final</strong> once the product access has been granted.
-        </p>
-        <p>
-            We do not offer refunds for "change of mind." However, if you experience technical issues or the service is non-functional, please contact us for a resolution or refund.
-        </p>
+            <h2>Refund Policy</h2>
+            <p>
+                Due to the digital nature of our products, <strong>all sales are final</strong> once the product access has been granted.
+            </p>
+            <p>
+                We do not offer refunds for "change of mind." However, if you experience technical issues or the service is non-functional, please contact us for a resolution or refund.
+            </p>
 
-        <h2>Service Delivery Policy</h2>
-        <p>
-            <strong>Timeline:</strong> After successful payment, services are processed and delivered <strong>immediately</strong>.
-        </p>
-        <p>
-            <strong>Method:</strong> Access details are sent automatically to your registered email address. No physical shipping is involved.
-        </p>
+            <h2>Service Delivery Policy</h2>
+            <p>
+                <strong>Timeline:</strong> After successful payment, services are processed and delivered <strong>immediately</strong>.
+            </p>
+            <p>
+                <strong>Method:</strong> Access details are sent automatically to your registered email address. No physical shipping is involved.
+            </p>
+        </div>
     </div>
 
     <footer>
